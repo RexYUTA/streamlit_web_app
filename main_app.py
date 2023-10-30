@@ -16,7 +16,7 @@ from tqdm import tqdm
 def main():
     st.title('キーワードで人気のタイトル検索 ')
 
-    key = st.text_input(label='キーワードを入力してください！！:')
+    key = st.text_input(label='キーワードを入力してください！！')
     keyword = list(map(str,key.split()))
     keywords = ' '.join(keyword)
 
@@ -127,11 +127,6 @@ def main():
                 else:
                     value = info[attr]
                     data_ncode.append(value)
-
-
-    from janome.tokenizer import Tokenizer #形態素解析ライブラリ
-
-    tokenizer = Tokenizer()
 
     def get_token(text):
         t = Tokenizer()
