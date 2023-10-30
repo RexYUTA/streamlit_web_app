@@ -1,10 +1,17 @@
-#streamlit run --server.address localhost app.py
+#streamlit runapp.py
 
-import streamlit as st
-import io
-import json
-import gzip
-import requests
+import streamlit as st #Webアプリを簡単に作れるライブラリ
+import io #データ化したいページのURLを入力するだけで、自動でデータ箇所を判断して情報を集めてくれるスクレイピングサービス
+import json # JSON
+import gzip #ファイルを圧縮、展開するシンプルなインターフェイス
+import requests #HTTPライブラリ
+
+import pandas as pd
+from janome.tokenizer import Tokenizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from tqdm import tqdm
+
 
 def main():
     st.title('キーワードで人気のタイトル検索 ')
@@ -145,16 +152,6 @@ def main():
         token=get_token(item)
         documents.append(token)
 
-    from gensim import corpora
-    from gensim import matutils
-    import numpy as np
-    import pandas as pd
-    from sklearn.feature_extraction.text import TfidfTransformer
-
-    from janome.tokenizer import Tokenizer
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    from sklearn.metrics.pairwise import cosine_similarity
-    from tqdm import tqdm
     def stems(doc):
         result = []
         t = Tokenizer()
