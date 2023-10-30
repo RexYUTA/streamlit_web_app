@@ -187,7 +187,7 @@ def main():
     df_s = df_novel.sort_values('tf-idf', ascending=False)
     df_r = df_s.reset_index(drop=True)
 
-    st.markdown(df_r.to_html(render_links=True),unsafe_allow_html=True)
+    st.markdown(df_r.head(50).to_html(render_links=True),unsafe_allow_html=True)
 
 
 
