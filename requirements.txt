@@ -3,7 +3,7 @@ pip
 Janome
 japanize-matplotlib
 matplotlib
-numpy=
+numpy
 pandas
 tqdm
 sklearn
