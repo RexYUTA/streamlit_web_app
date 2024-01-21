@@ -6,4 +6,4 @@ main_app.pyをコピペしてローカル上なら動きます。
 Streamlit Cloud上で動かせます。
 streamlit Cloud上だと実行にとんでもなく時間かかります。改善出来ないか現在検討中です
 
-https://appwebapp-uenmefsv5bzsh3chttwvg7.streamlit.app/
+https://novel-title-search.streamlit.app/?embed_options=show_toolbar,dark_theme,show_colored_line
